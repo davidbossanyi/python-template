@@ -49,6 +49,12 @@ jobs:
         run: |
           poetry run pre-commit run --all-files
 
-      - name: Test
+      - name: Unit Tests
         run: |
-          poetry run pytest --cov=. --cov-fail-under=100 tests/
+          poetry run pytest tests/ -m unit
+
+      - name: Integration Tests
+        run: |
+          docker-compose up -d --build
+          poetry run pytest tests/ -m integration
+          docker-compose down

@@ -1,0 +1,29 @@
+# project folders
+.git
+.github
+.idea
+.venv
+tests
+
+# project files
+.dockerignore
+Dockerfile
+docker-compose.yml
+.flake8
+.gitignore
+.pre-commit-config.yaml
+README.md
+
+# coverage artefacts
+.coverage
+.coverage.*
+htmlcov
+
+# test artefacts
+**/.pytest_cache
+
+# mypy
+**/.mypy_cache
+
+# python artefacts
+**/__pycache__
