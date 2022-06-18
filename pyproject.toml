@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "python-template"
+name = "fastapi-celery-example"
 version = "0.0.1"
-description = "A starting point for python projects"
+description = "An example FastAPI app using Celery for task queuing."
 authors = ["David Bossanyi"]
 
 [tool.poetry.dependencies]

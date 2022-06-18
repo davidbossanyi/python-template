@@ -19,6 +19,10 @@ Install the virtual environment:
 ```shell
 poetry install
 ```
+Install the pre-commit hooks:
+```shell
+poetry run pre-commit install
+```
 Run the tests:
 ```shell
 make test-all
