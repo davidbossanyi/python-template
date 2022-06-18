@@ -34,7 +34,7 @@ jobs:
         name: Cache Pre-Commit
         with:
           path: ~/.cache/pre-commit
-          key: ${{ runner.os }}-pre-commit-${{ hashFiles('**/.pre-commit-config.yaml') }}
+          key: ${{ runner.os }}-pre-commit-${{ hashFiles('**/.pre-commit-config.yaml') }}-${{ hashFiles('**/mypy.ini') }}-${{ hashFiles('**/.flake8') }}
 
       - name: Install Poetry
         run: |
@@ -47,14 +47,13 @@ jobs:
 
       - name: Lint
         run: |
-          poetry run pre-commit run --all-files
+          make lint
 
       - name: Unit Tests
         run: |
-          poetry run pytest tests/ -m unit
+          make test-unit
 
       - name: Integration Tests
         run: |
-          docker-compose up -d --build
-          poetry run pytest tests/ -m integration
-          docker-compose down
+          make test-integration
+          make post-integration

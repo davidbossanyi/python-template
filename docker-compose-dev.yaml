@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+
+  api:
+    build:
+      context: .
+    environment:
+      - LOCAL_CELERY_BROKER_URL=redis://redis:6379/0
+      - AZURE_STORAGE_ACCOUNT_CONNECTION_STRING=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://azurite:10000/devstoreaccount1;QueueEndpoint=http://azurite:10001/devstoreaccount1;
+    command: uvicorn api.main:app --host 0.0.0.0 --port 80
+    ports:
+      - "8000:80"
+
+  worker:
+    build:
+      context: .
+    environment:
+      - LOCAL_CELERY_BROKER_URL=redis://redis:6379/0
+      - AZURE_STORAGE_ACCOUNT_CONNECTION_STRING=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://azurite:10000/devstoreaccount1;QueueEndpoint=http://azurite:10001/devstoreaccount1;
+    command: celery -A api.workers.examples worker --loglevel=info
+
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    ports:
+      - "10000:10000"
+      - "10001:10001"
+      - "10002:10002"
+
+  redis:
+    image: redis:alpine

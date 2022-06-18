@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
 from api.models.tasks.responses import TaskStatusResponse
-from api.workers.celery_workers import celery_app
+from api.workers.examples import celery_app
 
 router = APIRouter(prefix="/api/tasks", tags=["Tasks"])
 
@@ -12,6 +12,4 @@ def status(task_id: str) -> TaskStatusResponse:
     task_result = task_info.result
     if isinstance(task_result, Exception):
         task_result = None
-    return TaskStatusResponse(
-        task_id=task_id, status=task_info.status, result=task_result
-    )
+    return TaskStatusResponse(task_id=task_id, status=task_info.status, result=task_result)

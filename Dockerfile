@@ -29,6 +29,18 @@ RUN poetry install --no-dev
 
 FROM python-base as production
 ENV FASTAPI_ENV=production
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN \
+  adduser nonroot \
+  --uid 568 \
+  --group \
+  --system \
+  --disabled-password \
+  && \
+  mkdir -p /app \
+  && chown -R nonroot:nonroot /app \
+  && chmod -R 775 /app
 
 COPY --from=builder-base $VENV_PATH $VENV_PATH
 
@@ -36,6 +48,9 @@ COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 
 WORKDIR /app
+
+USER nonroot
+
 COPY . .
 
 EXPOSE 80
