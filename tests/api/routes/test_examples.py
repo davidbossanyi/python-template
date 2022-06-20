@@ -1,4 +1,5 @@
 import time
+import uuid
 
 import pytest
 from celery import states
@@ -7,14 +8,14 @@ from fastapi.testclient import TestClient
 from pytest_mock import MockerFixture
 
 
-def test_wait_unit(mocker: MockerFixture, client: TestClient, any_string: str) -> None:
+def test_wait_unit(mocker: MockerFixture, client: TestClient, any_uuid: uuid.UUID) -> None:
     class MockTask:
-        id: str = any_string
+        id: uuid.UUID = any_uuid
 
     mocker.patch("api.routes.examples.wait_for.delay", return_value=MockTask)
     response = client.get("/api/examples/wait?seconds=5")
     assert response.status_code == status.HTTP_200_OK
-    assert response.json().get("task_id") == any_string
+    assert response.json().get("task_id") == str(any_uuid)
 
 
 @pytest.mark.integration

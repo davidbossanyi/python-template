@@ -1,9 +1,9 @@
 from typing import Optional
 
-from pydantic import BaseModel
+from pydantic import UUID4, BaseModel
 
 
 class TaskStatusResponse(BaseModel):
-    task_id: str
+    task_id: UUID4
     status: str
     result: Optional[str]

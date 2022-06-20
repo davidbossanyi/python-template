@@ -1,3 +1,5 @@
+import uuid
+
 import pytest
 from fastapi.testclient import TestClient
 
@@ -8,6 +10,11 @@ from api.workers.config import CeleryConfig
 @pytest.fixture
 def any_string() -> str:
     return "any-string"
+
+
+@pytest.fixture
+def any_uuid() -> uuid.UUID:
+    return uuid.uuid4()
 
 
 @pytest.fixture

@@ -33,6 +33,7 @@ test-integration: pre-integration
 ## Spin up all containers locally, including api and worker
 run:
 	docker-compose -f docker-compose-dev.yaml up -d --build --remove-orphans
+	python -m webbrowser "http://localhost:8000"
 
 .PHONY: stop
 ## Spin down all containers locally, including api and worker

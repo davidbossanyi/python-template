@@ -8,11 +8,15 @@ tests
 # project files
 .dockerignore
 Dockerfile
-docker-compose.yml
+docker-compose-dev.yaml
+docker-compose-pytest.yaml
 .flake8
+mypy.ini
 .gitignore
 .pre-commit-config.yaml
 README.md
+Makefile
+LICENSE
 
 # coverage artefacts
 .coverage
