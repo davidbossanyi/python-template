@@ -5,26 +5,28 @@ description = "An example FastAPI app using Celery for task queuing."
 authors = ["David Bossanyi"]
 
 [tool.poetry.dependencies]
-python = "^3.9, <3.10"
-fastapi = {extras = ["all"], version = "^0.78.0"}
-celery = "^5.2.6"
+python = "^3.10, <3.11"
+fastapi = "^0.78.0"
+celery = { version = "^5.3.0*", allow-prereleases = true}
 pydantic = {extras = ["dotenv"], version = "^1.9.1"}
-azure-storage-blob = "^12.12.0"
-azure-storage-queue = "2.1.0"
+azure-storage-blob = "^12.13.0"
+azure-storage-queue = "12.3.0"
 tomli = "^2.0.1"
-redis = "^4.3.3"
+redis = "^4.3.4"
+uvicorn = "^0.18.2"
+requests = "^2.28.1"
+pandas = "^1.4.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
-pre-commit = "^2.19.0"
-black = "^22.3.0"
+pre-commit = "^2.20.0"
+black = "^22.6.0"
 isort = "^5.10.1"
 flake8 = "^4.0.1"
-mypy = "^0.950"
-coverage = "^6.3.3"
+mypy = "^0.961"
+coverage = "^6.4.1"
 pytest-cov = "^3.0.0"
-pytest-mock = "^3.7.0"
-pytest-env = "^0.6.2"
+pytest-mock = "^3.8.2"
 pytest-celery = "^0.0.0"
 
 [build-system]
@@ -37,9 +39,6 @@ testpaths = [
 ]
 markers = [
     "integration",
-]
-env = [
-    "LOCAL_CELERY_BROKER_URL=memory://"
 ]
 
 [tool.black]

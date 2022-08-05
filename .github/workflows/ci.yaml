@@ -2,9 +2,7 @@ name: CI
 
 on:
   workflow_dispatch:
-  pull_request:
-    branches:
-      - main
+  pull_request: ~
   push:
     branches:
       - main
@@ -19,10 +17,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Python 3.9
-        uses: actions/setup-python@v3
+      - name: Setup Python 3.10
+        uses: actions/setup-python@v4
         with:
-          python-version: "3.9"
+          python-version: "3.10"
 
       - uses: actions/cache@v3
         name: Cache Dependencies
@@ -57,3 +55,32 @@ jobs:
         run: |
           make test-integration
           make post-integration
+
+  dependabot-automerge:
+    name: Dependabot Auto Merge
+    needs: [test]
+    permissions:
+      contents: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' && ( github.head_ref || github.ref_name ) != 'main' }}
+    steps:
+      - name: Fetch Dependabot Metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1.3.3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Approve Dependabot PR
+        run: gh pr review --approve "$PR_URL"
+        if: ${{ (steps.metadata.outputs.package-ecosystem == 'pip' && steps.metadata.outputs.update-type != 'version-update:semver-major') || steps.metadata.outputs.package-ecosystem != 'pip' }}
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Merge Dependabot PR
+        if: ${{ (steps.metadata.outputs.package-ecosystem == 'pip' && steps.metadata.outputs.update-type != 'version-update:semver-major') || steps.metadata.outputs.package-ecosystem != 'pip' }}
+        run: gh pr merge --auto --squash "$PR_URL" || echo "Merge conflict caused failure, waiting for dependabot to rebase"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

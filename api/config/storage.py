@@ -3,7 +3,7 @@ from pydantic import BaseSettings
 
 class AzureStorageConfig(BaseSettings):
     key: str
-    name: str
+    queue_url: str
     connection_string: str
 
     class Config:

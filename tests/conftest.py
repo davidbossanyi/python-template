@@ -23,8 +23,8 @@ def client() -> TestClient:
 
 
 @pytest.fixture
-def azurite_account_name() -> str:
-    return "devstoreaccount1"
+def azurite_account_key() -> str:
+    return "Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw=="
 
 
 @pytest.fixture(scope="session")

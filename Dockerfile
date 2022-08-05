@@ -53,6 +53,6 @@ USER nonroot
 
 COPY . .
 
-EXPOSE 80
+EXPOSE 8080
 
 ENTRYPOINT /docker-entrypoint.sh $0 $@
