@@ -26,7 +26,7 @@ post-integration:
 
 .PHONY: test-integration
 ## Run integration tests
-test-integration: pre-integration
+test-integration:
 	poetry run pytest tests -m "integration"
 
 .PHONY: run

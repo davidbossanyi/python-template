@@ -53,6 +53,8 @@ jobs:
 
       - name: Integration Tests
         run: |
+          make pre-integration
+          sleep 5
           make test-integration
           make post-integration
 
