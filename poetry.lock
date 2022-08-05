@@ -71,7 +71,7 @@ typing-extensions = ">=4.0.1"
 
 [[package]]
 name = "azure-storage-blob"
-version = "12.13.1"
+version = "12.12.0"
 description = "Microsoft Azure Blob Storage Client Library for Python"
 category = "main"
 optional = false
@@ -126,7 +126,7 @@ uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
 name = "celery"
-version = "5.3.0b1"
+version = "5.3.0a1"
 description = "Distributed Task Queue."
 category = "main"
 optional = false
@@ -138,7 +138,7 @@ click = ">=8.1.2,<9.0"
 click-didyoumean = ">=0.3.0"
 click-plugins = ">=1.1.1"
 click-repl = ">=0.2.0"
-kombu = ">=5.3.0b1,<6.0"
+kombu = ">=5.3.0a1,<6.0"
 pytz = ">=2021.3"
 vine = ">=5.0.0,<6.0"
 
@@ -173,7 +173,7 @@ sqs = ["kombu[sqs] (>=5.2.4,<5.3.0)"]
 tblib = ["tblib (>=1.3.0)", "tblib (>=1.5.0)"]
 yaml = ["PyYAML (>=3.10)"]
 zookeeper = ["kazoo (>=1.3.1)"]
-zstd = ["zstandard (==0.18.0)"]
+zstd = ["zstandard (==0.17.0)"]
 
 [[package]]
 name = "certifi"
@@ -958,7 +958,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10, <3.11"
-content-hash = "4a1a3c808189d38f73ab03c490023f4648d150671798eb9242c4b0f7a557c1c1"
+content-hash = "b2334876fd35ea012efb0cdf2957f87a35cd5c551ccd6a0b8f374d5ae8a3ead1"
 
 [metadata.files]
 amqp = [
@@ -985,8 +985,8 @@ azure-core = [
     {file = "azure_core-1.25.0-py3-none-any.whl", hash = "sha256:c26ad5f3612b8a2207cf2be0ef67e478a74acfa450b8d25d778c939921f650dc"},
 ]
 azure-storage-blob = [
-    {file = "azure-storage-blob-12.13.1.zip", hash = "sha256:899c4b8e2671812d2cf78f107556a27dbb128caaa2bb06094e72a3d5836740af"},
-    {file = "azure_storage_blob-12.13.1-py3-none-any.whl", hash = "sha256:726b86f733dc76218ce45b7a3254b61ba4f0cc3d68b7621be4985248c92ee483"},
+    {file = "azure-storage-blob-12.12.0.zip", hash = "sha256:f6daf07d1ca86d189ae15c9b1859dff5b7127bf24a07a4bbe41e0b81e01d62f7"},
+    {file = "azure_storage_blob-12.12.0-py3-none-any.whl", hash = "sha256:1eac4c364309ccc193c80ee26c78d25dfbf10926b1309095a448a7a0388526eb"},
 ]
 azure-storage-queue = [
     {file = "azure-storage-queue-12.3.0.zip", hash = "sha256:231f4ee6ddcb95ce85bb55a6e96f17e15b1f08f16abdb9567e8fd275cdb6f8e2"},
@@ -1022,8 +1022,8 @@ black = [
     {file = "black-22.6.0.tar.gz", hash = "sha256:6c6d39e28aed379aec40da1c65434c77d75e65bb59a1e1c283de545fb4e7c6c9"},
 ]
 celery = [
-    {file = "celery-5.3.0b1-py3-none-any.whl", hash = "sha256:3d4f1c548050e81f6447c82be6fc4bc5442ab2965497bb9f75540f8d9f4fab1c"},
-    {file = "celery-5.3.0b1.tar.gz", hash = "sha256:6a0f4cd65b827a50e5d1d470f31701c27f92008770f005ea366d4921aa34b36d"},
+    {file = "celery-5.3.0a1-py3-none-any.whl", hash = "sha256:608cc4b6513e5f42b72e4cc3b894141e062f0a3f7c06d78f5bfd56b2d7f8a4fe"},
+    {file = "celery-5.3.0a1.tar.gz", hash = "sha256:474056b21b4491ef3328c6e69d1911dda3e3f67967c8760b0b55b80cf8963d3b"},
 ]
 certifi = [
     {file = "certifi-2022.6.15-py3-none-any.whl", hash = "sha256:fe86415d55e84719d75f8b69414f6438ac3547d2078ab91b67e779ef69378412"},

@@ -3,7 +3,7 @@ version: "3.9"
 services:
 
   azurite:
-    image: mcr.microsoft.com/azure-storage/azurite
+    image: mcr.microsoft.com/azure-storage/azurite:3.17.1
     ports:
       - "10000:10000"
       - "10001:10001"
