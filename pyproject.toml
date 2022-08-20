@@ -6,7 +6,7 @@ authors = ["David Bossanyi"]
 
 [tool.poetry.dependencies]
 python = "^3.10, <3.11"
-fastapi = "^0.79.0"
+fastapi = "^0.79.1"
 celery = { version = "5.3.0b1", allow-prereleases = true}
 pydantic = {extras = ["dotenv"], version = "^1.9.2"}
 azure-storage-blob = "12.13.1"
