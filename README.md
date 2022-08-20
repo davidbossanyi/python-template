@@ -15,13 +15,9 @@ Clone the repo:
 ```shell
 git clone https://github.com/davidbossanyi/fastapi-celery-example.git
 ```
-Install the virtual environment:
+Install the virtual environment and pre-commit hooks:
 ```shell
-poetry install
-```
-Install the pre-commit hooks:
-```shell
-poetry run pre-commit install
+make init
 ```
 Run the tests:
 ```shell
@@ -37,7 +33,7 @@ Spin up the docker containers using
 ```shell
 make run
 ```
-Head to the swagger page at [http://localhost:8000](http://localhost:8000) and try out the `/api/examples/wait` endpoint. Grab the `task_id` from the response, and use it to check the task status with the `/api/tasks/status` endpoint.
+The swagger page will be launched at [http://localhost:8000](http://localhost:8000). Try out the `/api/examples/wait` endpoint. Grab the `task_id` from the response, and use it to check the task status with the `/api/tasks/status` endpoint.
 
 Stop the containers using
 ```shell
@@ -45,4 +41,4 @@ make stop
 ```
 
 ### Notes
-This example uses [Azure Blob Storage](https://docs.celeryq.dev/en/stable/internals/reference/celery.backends.azureblockblob.html) for the task results back end and (temporarily) [Redis](https://docs.celeryq.dev/en/stable/getting-started/backends-and-brokers/redis.html) for the message broker. Once [this commit](https://github.com/celery/kombu/commit/b3e89101dc6a4a002ec48a756ab82589da1c7541) is released by kombu, [Azure Storage Queues](https://docs.celeryq.dev/projects/kombu/en/latest/reference/kombu.transport.azurestoragequeues.html) can be used for the message broker. [Azurite](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azurite?tabs=visual-studio) is used for local Azure Storage emulation.
+Currently waiting for [this commit](https://github.com/celery/kombu/commit/0e57a7b3a0edde7bad7061e73f741296ce06c3c8) to make its way into a kombu release. This will allow the integration tests to pass.

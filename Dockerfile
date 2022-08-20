@@ -1,4 +1,4 @@
-FROM python:3.9-slim as python-base
+FROM python:3.10-slim as python-base
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PIP_NO_CACHE_DIR=off \
@@ -19,7 +19,7 @@ RUN apt-get update \
         curl \
         build-essential
 
-ENV POETRY_VERSION=1.1.13
+ENV POETRY_VERSION=1.1.14
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
 WORKDIR $PYSETUP_PATH
@@ -28,8 +28,9 @@ RUN poetry install --no-dev
 
 
 FROM python-base as production
-ENV FASTAPI_ENV=production
 ENV DEBIAN_FRONTEND noninteractive
+
+COPY --from=builder-base $VENV_PATH $VENV_PATH
 
 RUN \
   adduser nonroot \
@@ -40,19 +41,18 @@ RUN \
   && \
   mkdir -p /app \
   && chown -R nonroot:nonroot /app \
-  && chmod -R 775 /app
-
-COPY --from=builder-base $VENV_PATH $VENV_PATH
-
-COPY ./docker-entrypoint.sh /docker-entrypoint.sh
-RUN chmod +x /docker-entrypoint.sh
-
-WORKDIR /app
+  && chmod -R 775 /app \
+  && chown -R nonroot:nonroot /opt/pysetup/.venv \
+  && chmod -R 775 /opt/pysetup/.venv
 
 USER nonroot
 
+WORKDIR /app
+
 COPY . .
 
-EXPOSE 8080
+RUN ..$VENV_PATH/bin/activate
 
-ENTRYPOINT /docker-entrypoint.sh $0 $@
+ENV PYTHONPATH="/app:$PYTHONPATH"
+
+EXPOSE 8080
