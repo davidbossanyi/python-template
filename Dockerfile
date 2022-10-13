@@ -51,6 +51,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN sed -i "106s/ = q/ = q.get_queue_properties()/" ..$VENV_PATH/lib/python3.10/site-packages/kombu/transport/azurestoragequeues.py
+
 RUN ..$VENV_PATH/bin/activate
 
 ENV PYTHONPATH="/app:$PYTHONPATH"
