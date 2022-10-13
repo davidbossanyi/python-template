@@ -68,16 +68,16 @@ msrest = ">=0.7.1"
 
 [[package]]
 name = "azure-storage-queue"
-version = "12.4.0"
+version = "12.5.0"
 description = "Microsoft Azure Azure Queue Storage Client Library for Python"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.dependencies]
-azure-core = ">=1.23.1,<2.0.0"
+azure-core = ">=1.24.2,<2.0.0"
 cryptography = ">=2.1.4"
-msrest = ">=0.6.21"
+msrest = ">=0.7.1"
 
 [[package]]
 name = "billiard"
@@ -918,7 +918,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10, <3.11"
-content-hash = "af229acf3fd92d656291040d2626a04022d1bf6a4fdb36249c88eb0026d00d0a"
+content-hash = "afb88c58c9370bd26a41a4fd589b3c6981e520cc24f0898935171c696e82519f"
 
 [metadata.files]
 amqp = [
@@ -942,8 +942,8 @@ azure-storage-blob = [
     {file = "azure_storage_blob-12.14.0-py3-none-any.whl", hash = "sha256:073c9e99154975644b32ed5c900832d8aa3c041b972b2f34ef269760d023e69b"},
 ]
 azure-storage-queue = [
-    {file = "azure-storage-queue-12.4.0.zip", hash = "sha256:d633050e5beac6c43e86f7d1cbe74766a1798b9f6e1b44ae41c0490465d00b45"},
-    {file = "azure_storage_queue-12.4.0-py3-none-any.whl", hash = "sha256:9bd68fc07f56c43cea8f3cd1b4a8ea10807fde25f075736725e708945ec39697"},
+    {file = "azure-storage-queue-12.5.0.zip", hash = "sha256:3b374424af72d32daff8baf9b64630074c3a8b3fd5332a45216b3bc96bc7b172"},
+    {file = "azure_storage_queue-12.5.0-py3-none-any.whl", hash = "sha256:e65a6cdbacef40b5a7056c504ce45e496d53fc123d032367d250ea0c6e8f9dce"},
 ]
 billiard = [
     {file = "billiard-4.0.2-py3-none-any.whl", hash = "sha256:6fa9c000d1a8a6f5e18f0d64f18aa5fe87dbe37964857a3be15deb6fce0b13c5"},

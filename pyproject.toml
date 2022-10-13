@@ -10,7 +10,7 @@ fastapi = "^0.85.0"
 celery = { version = "5.3.0b1", allow-prereleases = true}
 pydantic = {extras = ["dotenv"], version = "^1.10.2"}
 azure-storage-blob = "12.14.0"
-azure-storage-queue = "12.4.0"
+azure-storage-queue = "12.5.0"
 tomli = "^2.0.1"
 uvicorn = "^0.18.3"
 requests = "^2.28.1"
