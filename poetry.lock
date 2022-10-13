@@ -55,16 +55,16 @@ typing-extensions = ">=4.0.1"
 
 [[package]]
 name = "azure-storage-blob"
-version = "12.13.1"
+version = "12.14.0"
 description = "Microsoft Azure Blob Storage Client Library for Python"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.dependencies]
-azure-core = ">=1.23.1,<2.0.0"
+azure-core = ">=1.24.2,<2.0.0"
 cryptography = ">=2.1.4"
-msrest = ">=0.6.21"
+msrest = ">=0.7.1"
 
 [[package]]
 name = "azure-storage-queue"
@@ -918,7 +918,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10, <3.11"
-content-hash = "984c997e8376f22cac17b8992d1eb8e831f27995b8082d1d60062b923f39af1a"
+content-hash = "af229acf3fd92d656291040d2626a04022d1bf6a4fdb36249c88eb0026d00d0a"
 
 [metadata.files]
 amqp = [
@@ -938,8 +938,8 @@ azure-core = [
     {file = "azure_core-1.25.0-py3-none-any.whl", hash = "sha256:c26ad5f3612b8a2207cf2be0ef67e478a74acfa450b8d25d778c939921f650dc"},
 ]
 azure-storage-blob = [
-    {file = "azure-storage-blob-12.13.1.zip", hash = "sha256:899c4b8e2671812d2cf78f107556a27dbb128caaa2bb06094e72a3d5836740af"},
-    {file = "azure_storage_blob-12.13.1-py3-none-any.whl", hash = "sha256:726b86f733dc76218ce45b7a3254b61ba4f0cc3d68b7621be4985248c92ee483"},
+    {file = "azure-storage-blob-12.14.0.zip", hash = "sha256:a72dd9923e4b38a552f2bc1749d1fa5b820f497a8fb3cd2d77e7045bbe87bb4d"},
+    {file = "azure_storage_blob-12.14.0-py3-none-any.whl", hash = "sha256:073c9e99154975644b32ed5c900832d8aa3c041b972b2f34ef269760d023e69b"},
 ]
 azure-storage-queue = [
     {file = "azure-storage-queue-12.4.0.zip", hash = "sha256:d633050e5beac6c43e86f7d1cbe74766a1798b9f6e1b44ae41c0490465d00b45"},
