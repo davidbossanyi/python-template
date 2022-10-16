@@ -6,8 +6,8 @@ An example [FastAPI](https://fastapi.tiangolo.com/) app using [Celery](https://d
 ### Requirements
  - [make](https://www.gnu.org/software/make/) (e.g. from [chocolatey](https://chocolatey.org/) on Windows)
  - [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/)
- - [python](https://www.python.org/downloads/release/python-3912/) 3.9 or higher
- - [poetry](https://python-poetry.org/docs/master/#installing-with-the-official-installer) 1.1 or higher
+ - [python](https://www.python.org/downloads/release/python-3912/) 3.10 or higher
+ - [poetry](https://python-poetry.org/docs/master/#installing-with-the-official-installer) 1.2 or higher
 
 ### Running locally
 #### Getting set up
@@ -39,6 +39,3 @@ Stop the containers using
 ```shell
 make stop
 ```
-
-### Notes
-Currently waiting for [this commit](https://github.com/celery/kombu/commit/0e57a7b3a0edde7bad7061e73f741296ce06c3c8) to make its way into a kombu release. This will allow the integration tests to pass.
