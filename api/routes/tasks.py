@@ -1,7 +1,13 @@
-from fastapi import APIRouter
+import datetime as dt
+from typing import Optional
+
+from fastapi import APIRouter, Depends, Query
 from pydantic import UUID4
 
-from api.models.tasks.responses import TaskStatusResponse
+from api.dependencies import azure_blob_celery_repository
+from api.models.tasks.responses import CeleryTaskIdList, TaskStatusResponse
+from api.repositories.celery import ICeleryRepository
+from api.utils.date_utils import to_utc_datetime
 from api.workers.examples import celery_app
 
 router = APIRouter(prefix="/api/tasks", tags=["Tasks"])
@@ -14,3 +20,18 @@ def status(task_id: UUID4) -> TaskStatusResponse:
     if isinstance(task_result, Exception):
         task_result = None
     return TaskStatusResponse(task_id=task_id, status=task_info.status, result=task_result)
+
+
+@router.get("/failures", response_model=CeleryTaskIdList)
+def failures(
+    date_from: Optional[dt.datetime | dt.date] = Query(
+        None, alias="from", description="date in UTC after which failures should be included"
+    ),
+    date_to: Optional[dt.datetime | dt.date] = Query(
+        None, alias="to", description="date in UTC before which failures should be included"
+    ),
+    repo: ICeleryRepository = Depends(azure_blob_celery_repository),
+) -> CeleryTaskIdList:
+    date_from = to_utc_datetime(date_from)
+    date_to = to_utc_datetime(date_to)
+    return repo.get_failures(date_from=date_from, date_to=date_to)
