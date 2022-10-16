@@ -46,7 +46,7 @@ jobs:
       - name: (Temporary) Fix Azure Storage Queues Transport in Kombu
         run: |
           VENV_PATH=$(poetry env info --path)
-          sed -i "106s/ = q/ = q.get_queue_properties()/" $VENV_PATH/lib/python3.10/site-packages/kombu/transport/azurestoragequeues.py
+          curl -s https://raw.githubusercontent.com/celery/kombu/master/kombu/transport/azurestoragequeues.py > $VENV_PATH/lib/python3.10/site-packages/kombu/transport/azurestoragequeues.py
 
       - name: Lint
         run: |
