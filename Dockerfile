@@ -26,6 +26,9 @@ WORKDIR $PYSETUP_PATH
 COPY ./poetry.lock ./pyproject.toml ./
 RUN poetry install --only main
 
+# (temporary) use the latest azurestoragequeues broker from kombu main branch
+RUN curl -s https://raw.githubusercontent.com/celery/kombu/master/kombu/transport/azurestoragequeues.py > $VENV_PATH/lib/python3.10/site-packages/kombu/transport/azurestoragequeues.py
+
 
 FROM python-base as production
 ENV DEBIAN_FRONTEND noninteractive
@@ -51,7 +54,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN sed -i "106s/ = q/ = q.get_queue_properties()/" ..$VENV_PATH/lib/python3.10/site-packages/kombu/transport/azurestoragequeues.py
+# use the correct hostname in the docker-compose stack
+RUN sed -i "s/localhost/azurite/" azurite.env
 
 RUN ..$VENV_PATH/bin/activate
 
