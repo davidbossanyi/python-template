@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 
 from api.dependencies import get_version
-from api.routes import examples, tasks
+from api.routes import run, tasks
 
 app = FastAPI(
     title="Demo API",
@@ -10,7 +10,7 @@ app = FastAPI(
     version=get_version(),
 )
 
-app.include_router(examples.router)
+app.include_router(run.router)
 app.include_router(tasks.router)
 
 

@@ -12,7 +12,7 @@ services:
   worker:
     build:
       context: .
-    command: celery -A api.workers.examples worker --loglevel=info
+    command: celery -A api.workers.run worker --loglevel=info
 
   azurite:
     image: mcr.microsoft.com/azure-storage/azurite

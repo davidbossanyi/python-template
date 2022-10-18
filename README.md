@@ -33,7 +33,7 @@ Spin up the docker containers using
 ```shell
 make run
 ```
-The swagger page will be launched at [http://localhost:8000](http://localhost:8000). Try out the `/api/examples/wait` endpoint. Grab the `task_id` from the response, and use it to check the task status with the `/api/tasks/status` endpoint.
+The swagger page will be launched at [http://localhost:8000](http://localhost:8000). Try out the `/api/run/wait` endpoint. Grab the `task_id` from the response, and use it to check the task status with the `/api/tasks/status` endpoint.
 
 Stop the containers using
 ```shell
