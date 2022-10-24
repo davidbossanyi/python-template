@@ -1191,8 +1191,8 @@ isort = [
     {file = "isort-5.10.1.tar.gz", hash = "sha256:e8443a5e7a020e9d7f97f1d7d9cd17c88bcb3bc7e218bf9cf5095fe550be2951"},
 ]
 kombu = [
-    {file = "kombu-5.3.0b1-py3-none-any.whl", hash = "sha256:3486dbfd9fc5a7e1568815236a5aac2bc423049c8566484c2cfabc0873097624"},
-    {file = "kombu-5.3.0b1.tar.gz", hash = "sha256:7756bf0d2a0036b1e9774aebce3e42127207394ec8c888f3997b0e12e7c4a160"},
+    {file = "kombu-5.3.0b2-py3-none-any.whl", hash = "sha256:6a043f57eb5dc9fb412e38d3b2442f74149520cfa965be16709b6fbccbe2b60f"},
+    {file = "kombu-5.3.0b2.tar.gz", hash = "sha256:cf9e28447754db3bfda01f49177924902ae7adccfd8f3ac05c39bfed891bb8e1"},
 ]
 mccabe = [
     {file = "mccabe-0.7.0-py2.py3-none-any.whl", hash = "sha256:6c2d30ab6be0e4a46919781807b4f0d834ebdd6c6e3dca0bda5a15f863427b6e"},

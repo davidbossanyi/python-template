@@ -26,9 +26,6 @@ WORKDIR $PYSETUP_PATH
 COPY ./poetry.lock ./pyproject.toml ./
 RUN poetry install --only main
 
-# (temporary) use the latest azurestoragequeues broker from kombu main branch
-RUN curl -s https://raw.githubusercontent.com/celery/kombu/master/kombu/transport/azurestoragequeues.py > $VENV_PATH/lib/python3.10/site-packages/kombu/transport/azurestoragequeues.py
-
 
 FROM python-base as production
 ENV DEBIAN_FRONTEND noninteractive
