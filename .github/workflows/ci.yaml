@@ -32,7 +32,7 @@ jobs:
         name: Cache Pre-Commit
         with:
           path: ~/.cache/pre-commit
-          key: ${{ runner.os }}-pre-commit-${{ hashFiles('**/.pre-commit-config.yaml') }}-${{ hashFiles('**/mypy.ini') }}-${{ hashFiles('**/.flake8') }}
+          key: ${{ runner.os }}-pre-commit-${{ hashFiles('**/.pre-commit-config.yaml') }}
 
       - name: Install Poetry
         run: |
