@@ -39,6 +39,10 @@ jobs:
           python -m pip install --upgrade pip wheel
           curl -sSL https://install.python-poetry.org | python -
 
+      - name: Check Lock File
+        run: |
+          poetry lock --check
+
       - name: Install Dependencies
         run: |
           poetry install --no-interaction --no-ansi
