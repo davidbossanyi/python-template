@@ -17,18 +17,24 @@ repos:
     hooks:
       - id: black
   - repo: https://github.com/PyCQA/isort
-    rev: 5.11.2
+    rev: 5.11.4
     hooks:
       - id: isort
   - repo: https://github.com/PyCQA/flake8
     rev: 6.0.0
     hooks:
       - id: flake8
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v0.991
-    hooks:
-      - id: mypy
   - repo: https://github.com/fpgmaas/deptry
-    rev: 0.6.6
+    rev: 0.7.0
     hooks:
       - id: deptry
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        entry: poetry run mypy
+        language: system
+        types: [python]
+        pass_filenames: false
+        require_serial: true
+        always_run: true

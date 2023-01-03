@@ -42,7 +42,7 @@ def celery_config() -> dict:
 
 @pytest.fixture(scope="session")
 def celery_container_client() -> ContainerClient:
-    service_client = BlobServiceClient.from_connection_string(azure_storage_config.connection_string)
+    service_client: BlobServiceClient = BlobServiceClient.from_connection_string(azure_storage_config.connection_string)
     try:
         container_client = service_client.create_container("celery-test")
     except ResourceExistsError:

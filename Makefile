@@ -21,40 +21,43 @@ test: test-unit pre-integration test-integration post-integration
 .PHONY: test-unit
 ## Run unit tests
 test-unit:
-	poetry run pytest tests/ -m "not integration"
+	@echo "Running unit tests"
+	@poetry run pytest tests/ -m "not integration"
 
 .PHONY: pre-integration
 ## Spin up docker containers for integration tests
 pre-integration:
-	docker-compose -f docker-compose-pytest.yaml up -d --remove-orphans
+	@docker-compose -f docker-compose-pytest.yaml up -d --remove-orphans
 
 .PHONY: post-integration
 ## Spin down docker containers for integration tests
 post-integration:
-	docker-compose -f docker-compose-pytest.yaml down
+	@docker-compose -f docker-compose-pytest.yaml down
 
 .PHONY: test-integration
 ## Run integration tests
 test-integration:
-	poetry run pytest tests -m "integration"
+	@echo "Running integration tests"
+	@poetry run pytest tests -m "integration"
 
-.PHONY: run
+.PHONY: start
 ## Spin up all containers locally, including api and worker
-run:
-	docker-compose -f docker-compose-dev.yaml up -d --build --remove-orphans
-	python -m webbrowser -t "http://localhost:8000"
+start:
+	@docker-compose -f docker-compose-dev.yaml up -d --build --remove-orphans
+	@python -m webbrowser -t "http://localhost:8000"
 
 .PHONY: stop
 ## Spin down all containers locally, including api and worker
 stop:
-	docker-compose -f docker-compose-dev.yaml down
+	@docker-compose -f docker-compose-dev.yaml down
 
 .PHONY: lint
 ## Lint the project (and fix)
 lint:
-	poetry run pre-commit run --all-files
+	@poetry run pre-commit run --all-files
 
-.PHONY: init
-## Initialize the project
-init:
-	poetry install && poetry run pre-commit install
+.PHONY: install
+## Install the project and development environment
+install:
+	@poetry install
+	@poetry run pre-commit install
