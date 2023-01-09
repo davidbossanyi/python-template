@@ -14,6 +14,6 @@ app.include_router(run.router)
 app.include_router(tasks.router)
 
 
-@app.get("/", include_in_schema=False)
-def redirect_to_docs() -> RedirectResponse:
-    return RedirectResponse("/api/docs")
+@app.get("/", include_in_schema=False, response_class=RedirectResponse)
+def redirect_to_docs() -> str:
+    return "/api/docs"
