@@ -27,7 +27,7 @@ test-unit:
 .PHONY: pre-integration
 ## Spin up docker containers for integration tests
 pre-integration:
-	@docker-compose -f docker-compose-pytest.yaml up -d --remove-orphans
+	@docker-compose up -d --remove-orphans azurite
 
 .PHONY: post-integration
 ## Spin down docker containers for integration tests
@@ -43,13 +43,13 @@ test-integration:
 .PHONY: start
 ## Spin up all containers locally, including api and worker
 start:
-	@docker-compose -f docker-compose-dev.yaml up -d --build --remove-orphans
+	@docker-compose up -d --build
 	@python -m webbrowser -t "http://localhost:8000"
 
 .PHONY: stop
-## Spin down all containers locally, including api and worker
+## Stop all docker containers
 stop:
-	@docker-compose -f docker-compose-dev.yaml down
+	@docker-compose down
 
 .PHONY: lint
 ## Lint the project (and fix)

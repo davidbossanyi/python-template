@@ -1,5 +1,5 @@
 # fastapi-celery-example
-An example [FastAPI](https://fastapi.tiangolo.com/) app using [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html) for task queuing.
+An example [FastAPI](https://fastapi.tiangolo.com/) app using [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html) and [Azure storage](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview) for task queuing.
 
 [![CI](https://github.com/davidbossanyi/python-template/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/davidbossanyi/python-template/actions/workflows/ci.yaml)
 
@@ -31,9 +31,9 @@ make lint
 #### Running the application
 Spin up the docker containers using
 ```shell
-make run
+make start
 ```
-The swagger page will be launched at [http://localhost:8000](http://localhost:8000). Try out the `/api/run/wait` endpoint. Grab the `task_id` from the response, and use it to check the task status with the `/api/tasks/status` endpoint.
+The swagger page will be launched in your browser. Try out the `/api/run/wait` endpoint. Grab the `task_id` from the response, and use it to check the task status with the `/api/tasks/status` endpoint.
 
 Stop the containers using
 ```shell
