@@ -31,8 +31,7 @@ pre-integration:
 
 .PHONY: post-integration
 ## Spin down docker containers for integration tests
-post-integration:
-	@docker-compose -f docker-compose-pytest.yaml down
+post-integration: stop
 
 .PHONY: test-integration
 ## Run integration tests
