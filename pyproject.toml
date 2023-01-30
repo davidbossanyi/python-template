@@ -26,7 +26,7 @@ coverage = "^7.1.0"
 [tool.poetry.group.lint.dependencies]
 pre-commit = "^3.0.2"
 black = "^22.12.0"
-isort = "^5.11.4"
+isort = "^5.12.0"
 flake8 = "^6.0.0"
 mypy = "^0.991"
 deptry = "^0.8.0"
