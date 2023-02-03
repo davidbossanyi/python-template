@@ -7,7 +7,7 @@ An example [FastAPI](https://fastapi.tiangolo.com/) app using [Celery](https://d
  - [make](https://www.gnu.org/software/make/) (e.g. from [chocolatey](https://chocolatey.org/) on Windows)
  - [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/)
  - [python](https://www.python.org/downloads/) 3.10 or higher
- - [poetry](https://python-poetry.org/docs/master/#installing-with-the-official-installer) 1.2 or higher
+ - [poetry](https://python-poetry.org/docs/master/#installing-with-the-official-installer) 1.3 or higher
 
 ### Running locally
 #### Getting set up
