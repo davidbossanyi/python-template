@@ -19,7 +19,7 @@ RUN apt-get update \
         curl \
         build-essential
 
-ENV POETRY_VERSION=1.3.1
+ENV POETRY_VERSION=1.3.2
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
 WORKDIR $PYSETUP_PATH
