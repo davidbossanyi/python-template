@@ -9,7 +9,7 @@ tests
 .dockerignore
 Dockerfile
 docker-compose.yaml
-.flake8
+.editorconfig
 .gitignore
 .pre-commit-config.yaml
 README.md
