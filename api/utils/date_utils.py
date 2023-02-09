@@ -1,8 +1,7 @@
 import datetime as dt
-from typing import Optional
 
 
-def to_utc_datetime(date: Optional[dt.datetime | dt.date]) -> dt.datetime | None:
+def to_utc_datetime(date: dt.datetime | dt.date | None) -> dt.datetime | None:
     if not date:
         return None
     if isinstance(date, dt.date):

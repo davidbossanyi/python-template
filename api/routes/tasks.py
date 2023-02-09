@@ -1,5 +1,4 @@
 import datetime as dt
-from typing import Optional
 
 from fastapi import APIRouter, Depends, Query
 from pydantic import UUID4
@@ -24,12 +23,12 @@ def status(task_id: UUID4) -> TaskStatusResponse:
 
 @router.get("/failures", response_model=CeleryTaskIdList)
 def failures(
-    date_from: Optional[dt.datetime | dt.date] = Query(
-        None, alias="from", description="date in UTC after which failures should be included"
-    ),
-    date_to: Optional[dt.datetime | dt.date] = Query(
-        None, alias="to", description="date in UTC before which failures should be included"
-    ),
+    date_from: dt.datetime
+    | dt.date
+    | None = Query(None, alias="from", description="date in UTC after which failures should be included"),
+    date_to: dt.datetime
+    | dt.date
+    | None = Query(None, alias="to", description="date in UTC before which failures should be included"),
     repo: ICeleryRepository = Depends(azure_blob_celery_repository),
 ) -> CeleryTaskIdList:
     date_from = to_utc_datetime(date_from)
@@ -39,12 +38,12 @@ def failures(
 
 @router.get("/statistics", response_model=CeleryTaskStatistics)
 def statistics(
-    date_from: Optional[dt.datetime | dt.date] = Query(
-        None, alias="from", description="date in UTC after which statistics should be included"
-    ),
-    date_to: Optional[dt.datetime | dt.date] = Query(
-        None, alias="to", description="date in UTC before which statistics should be included"
-    ),
+    date_from: dt.datetime
+    | dt.date
+    | None = Query(None, alias="from", description="date in UTC after which statistics should be included"),
+    date_to: dt.datetime
+    | dt.date
+    | None = Query(None, alias="to", description="date in UTC before which statistics should be included"),
     repo: ICeleryRepository = Depends(azure_blob_celery_repository),
 ) -> CeleryTaskStatistics:
     date_from = to_utc_datetime(date_from)
