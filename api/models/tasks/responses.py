@@ -1,12 +1,10 @@
-from typing import Optional
-
 from pydantic import UUID4, BaseModel, validator
 
 
 class TaskStatusResponse(BaseModel):
     task_id: UUID4
     status: str
-    result: Optional[str]
+    result: str | None
 
 
 class CeleryTaskIdList(BaseModel):
@@ -18,9 +16,9 @@ class CeleryTaskStatistics(BaseModel):
     pending: int
     succeeded: int
     failed: int
-    success_rate: Optional[float]
+    success_rate: float | None
 
     @validator("success_rate", always=True)
-    def calculate_success_rate(cls, value: float, values: dict) -> float:
+    def calculate_success_rate(cls, value: float, values: dict[str, int | float]) -> float:
         total = values["total"]
-        return values["succeeded"] / total if total > 0 else 1
+        return float(values["succeeded"] / total if total > 0 else 1)

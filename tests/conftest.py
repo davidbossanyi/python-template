@@ -36,7 +36,7 @@ def azurite_account_key() -> str:
 
 
 @pytest.fixture(scope="session")
-def celery_config() -> dict:
+def celery_config() -> dict[str, str]:
     return {"broker_url": CeleryConfig.broker_url, "result_backend": CeleryConfig.result_backend}
 
 

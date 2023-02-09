@@ -18,7 +18,7 @@ def get_azure_storage_config() -> AzureStorageConfig:
 def get_version() -> str:
     with open(Path(__file__).parent.parent / "pyproject.toml", "rb") as f:
         project = tomli.load(f)
-    return project["tool"]["poetry"]["version"]
+    return str(project["tool"]["poetry"]["version"])
 
 
 def azure_blob_celery_repository() -> AzureBlobCeleryRepository:

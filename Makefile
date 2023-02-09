@@ -21,7 +21,7 @@ test: test-unit pre-integration test-integration post-integration
 .PHONY: test-unit
 ## Run unit tests
 test-unit:
-	@echo "Running unit tests"
+	@echo running unit tests
 	@poetry run pytest tests/ -m "not integration"
 
 .PHONY: pre-integration
@@ -36,7 +36,7 @@ post-integration: stop
 .PHONY: test-integration
 ## Run integration tests
 test-integration:
-	@echo "Running integration tests"
+	@echo running integration tests
 	@poetry run pytest tests -m "integration"
 
 .PHONY: start
@@ -50,10 +50,33 @@ start:
 stop:
 	@docker-compose down
 
+.PHONY: fmt
+## Format as much as possible
+fmt:
+	@echo running pre-commit hooks
+	@poetry run pre-commit run --all-files ||:
+	@echo running ruff
+	@poetry run ruff --fix-only . ||:
+	@echo running black
+	@poetry run black .
+	@echo running isort
+	@poetry run isort .
+
 .PHONY: lint
-## Lint the project (and fix)
+## Lint the project
 lint:
+	@echo running pre-commit hooks
 	@poetry run pre-commit run --all-files
+	@echo running ruff
+	@poetry run ruff .
+	@echo running black
+	@poetry run black --check .
+	@echo running isort
+	@poetry run isort --check-only .
+	@echo running mypy
+	@poetry run mypy
+	@echo running deptry
+	@poetry run deptry .
 
 .PHONY: install
 ## Install the project and development environment
