@@ -172,29 +172,29 @@ uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
 name = "celery"
-version = "5.3.0b1"
+version = "5.3.0b2"
 description = "Distributed Task Queue."
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "celery-5.3.0b1-py3-none-any.whl", hash = "sha256:3d4f1c548050e81f6447c82be6fc4bc5442ab2965497bb9f75540f8d9f4fab1c"},
-    {file = "celery-5.3.0b1.tar.gz", hash = "sha256:6a0f4cd65b827a50e5d1d470f31701c27f92008770f005ea366d4921aa34b36d"},
+    {file = "celery-5.3.0b2-py3-none-any.whl", hash = "sha256:b034f1e6475a90cf3e8c47357f132d0ed23fede22206ef5fc78b91f40f43ad67"},
+    {file = "celery-5.3.0b2.tar.gz", hash = "sha256:9ca1c46c40a5fd0946783d3a5a1ee532e283a586b1eeebd88a40a17af757a875"},
 ]
 
 [package.dependencies]
-billiard = ">=3.6.4.0,<5.0"
+billiard = ">=4.1.0,<5.0"
 click = ">=8.1.2,<9.0"
 click-didyoumean = ">=0.3.0"
 click-plugins = ">=1.1.1"
 click-repl = ">=0.2.0"
-kombu = ">=5.3.0b1,<6.0"
+kombu = ">=5.3.0b2,<6.0"
 pytz = ">=2021.3"
 vine = ">=5.0.0,<6.0"
 
 [package.extras]
 arangodb = ["pyArango (>=2.0.1)"]
-auth = ["cryptography (>=37.0.1,<37.1.0)"]
+auth = ["cryptography (==39.0.0)"]
 azureblockblob = ["azure-storage-blob (>=12.11.0)"]
 brotli = ["brotli (>=1.0.0)", "brotlipy (>=0.7.0)"]
 cassandra = ["cassandra-driver (>=3.25.0,<4)"]
@@ -208,22 +208,22 @@ elasticsearch = ["elasticsearch (<8.0)"]
 eventlet = ["eventlet (>=0.32.0)"]
 gevent = ["gevent (>=1.5.0)"]
 librabbitmq = ["librabbitmq (>=1.5.0)"]
-memcache = ["pylibmc (==1.6.1)"]
+memcache = ["pylibmc (==1.6.3)"]
 mongodb = ["pymongo[srv] (>=4.0.2)"]
 msgpack = ["msgpack (==1.0.4)"]
 pymemcache = ["python-memcached (==1.59)"]
 pyro = ["pyro4 (==4.82)"]
 pytest = ["pytest-celery (==0.0.0)"]
-redis = ["redis (>=4.2.2)"]
+redis = ["redis (>=4.2.2,<4.4.0)"]
 s3 = ["boto3 (>=1.9.125)"]
 slmq = ["softlayer-messaging (>=1.0.3)"]
 solar = ["ephem (>=4.1.3,<4.2.0)"]
-sqlalchemy = ["sqlalchemy (>=1.4.34,<1.5.0)"]
+sqlalchemy = ["sqlalchemy (==1.4.45)"]
 sqs = ["kombu[sqs] (>=5.2.4,<5.3.0)"]
 tblib = ["tblib (>=1.3.0)", "tblib (>=1.5.0)"]
 yaml = ["PyYAML (>=3.10)"]
 zookeeper = ["kazoo (>=1.3.1)"]
-zstd = ["zstandard (==0.18.0)"]
+zstd = ["zstandard (==0.19.0)"]
 
 [[package]]
 name = "certifi"
@@ -1546,4 +1546,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10, <3.11"
-content-hash = "7e4f7bcfcb785ca126392d49a0b41ec32e237014ea965eb2853079b7770ba53b"
+content-hash = "b1c522ab1d462ee16c0a8be08a1853196d1f352c4539642ec0c495e8cb566802"
