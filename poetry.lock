@@ -94,20 +94,24 @@ msrest = ">=0.7.1"
 
 [[package]]
 name = "azure-storage-queue"
-version = "12.5.0"
+version = "12.6.0"
 description = "Microsoft Azure Azure Queue Storage Client Library for Python"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "azure-storage-queue-12.5.0.zip", hash = "sha256:3b374424af72d32daff8baf9b64630074c3a8b3fd5332a45216b3bc96bc7b172"},
-    {file = "azure_storage_queue-12.5.0-py3-none-any.whl", hash = "sha256:e65a6cdbacef40b5a7056c504ce45e496d53fc123d032367d250ea0c6e8f9dce"},
+    {file = "azure-storage-queue-12.6.0.zip", hash = "sha256:19a01f1d860b5e59789e1727ce6aec4f0903ac56307a564c4fa777fb38b6b50d"},
+    {file = "azure_storage_queue-12.6.0-py3-none-any.whl", hash = "sha256:b1a712bf61043cc0e871a18092f389eef89e43d803002cd77d89723f55e80e47"},
 ]
 
 [package.dependencies]
-azure-core = ">=1.24.2,<2.0.0"
+azure-core = ">=1.26.0,<2.0.0"
 cryptography = ">=2.1.4"
-msrest = ">=0.7.1"
+isodate = ">=0.6.1"
+typing-extensions = ">=4.0.1"
+
+[package.extras]
+aio = ["azure-core[aio] (>=1.26.0,<2.0.0)"]
 
 [[package]]
 name = "billiard"
@@ -1546,4 +1550,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10, <3.11"
-content-hash = "002d620013711d757ba4a7081c08e033eb80cf74d1ef627988012a4cec4b99ef"
+content-hash = "2f592493b5279f4e7d7291a42aa14285d2330c17561cf9dbeb1f2f0594c7c1c9"
