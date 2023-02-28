@@ -6,7 +6,7 @@ from api.dependencies import get_azure_storage_config, get_version
 def test_get_version(mocker: MockerFixture, any_string: str) -> None:
     get_version.cache_clear()
     mocker.patch(
-        "api.dependencies.tomli.load",
+        "api.dependencies.tomllib.load",
         return_value={"tool": {"poetry": {"version": any_string}}},
     )
     assert get_version() == any_string
