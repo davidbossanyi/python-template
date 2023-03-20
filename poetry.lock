@@ -829,14 +829,14 @@ requirements-deprecated-finder = ["pip-api", "pipreqs"]
 
 [[package]]
 name = "kombu"
-version = "5.3.0b2"
+version = "5.3.0b3"
 description = "Messaging library for Python."
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "kombu-5.3.0b2-py3-none-any.whl", hash = "sha256:6a043f57eb5dc9fb412e38d3b2442f74149520cfa965be16709b6fbccbe2b60f"},
-    {file = "kombu-5.3.0b2.tar.gz", hash = "sha256:cf9e28447754db3bfda01f49177924902ae7adccfd8f3ac05c39bfed891bb8e1"},
+    {file = "kombu-5.3.0b3-py3-none-any.whl", hash = "sha256:4ad23178dcd11192672d1fad598ace737d1044dbf31edf335a800ed26a9fb2fb"},
+    {file = "kombu-5.3.0b3.tar.gz", hash = "sha256:316df5e840f284d0671b9000bbf747da2b00f3b81433c720de66a5f659e5711d"},
 ]
 
 [package.dependencies]
@@ -844,18 +844,18 @@ amqp = ">=5.1.1,<6.0.0"
 vine = "*"
 
 [package.extras]
-azureservicebus = ["azure-servicebus (>=7.6.1)"]
-azurestoragequeues = ["azure-storage-queue (>=12.2.0)"]
+azureservicebus = ["azure-servicebus (>=7.8.3)"]
+azurestoragequeues = ["azure-identity (>=1.12.0)", "azure-storage-queue (>=12.6.0)"]
 confluentkafka = ["confluent-kafka (>=1.9.0,<1.10.0)"]
 consul = ["python-consul2"]
 librabbitmq = ["librabbitmq (>=2.0.0)"]
 mongodb = ["pymongo (>=4.1.1)"]
 msgpack = ["msgpack"]
-pyro = ["pyro4"]
+pyro = ["pyro5"]
 qpid = ["qpid-python (>=0.26)", "qpid-tools (>=0.26)"]
-redis = ["redis (>=4.2.2)"]
+redis = ["redis (>=4.2.2,<4.4.0)"]
 slmq = ["softlayer-messaging (>=1.0.3)"]
-sqlalchemy = ["sqlalchemy"]
+sqlalchemy = ["sqlalchemy (>=1.4.47,<2.1)"]
 sqs = ["boto3 (>=1.22.2)", "pycurl (>=7.44.1,<7.45.0)", "urllib3 (>=1.26.9)"]
 yaml = ["PyYAML (>=3.10)"]
 zookeeper = ["kazoo (>=2.8.0)"]
@@ -1462,4 +1462,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "f6617c726a5dd7c8ff9e9fcf4c33f1fd1fbd2e0ad59bc26cfb330365b0c5573f"
+content-hash = "a0bead24433f081b512a479602a9164f2510e62a75237255d789085eab67322e"
