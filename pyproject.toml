@@ -16,7 +16,7 @@ uvicorn = "^0.21.1"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.3.0"
-httpx = "^0.23.3"
+httpx = "^0.24.0"
 pytest-mock = "^3.10.0"
 pytest-celery = "^0.0.0"
 pytest-cov = "^4.0.0"
