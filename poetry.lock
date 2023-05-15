@@ -613,14 +613,14 @@ tox = ["tox"]
 
 [[package]]
 name = "deptry"
-version = "0.10.0"
-description = "A command line utility to check for obsolete, missing and transitive dependencies in a Python project."
+version = "0.11.0"
+description = "A command line utility to check for unused, missing and transitive dependencies in a Python project."
 category = "dev"
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "deptry-0.10.0-py3-none-any.whl", hash = "sha256:909adf943a02422d958f0dfccfc638cbaa53acfed7e0d7a5427b215a82bd8b51"},
-    {file = "deptry-0.10.0.tar.gz", hash = "sha256:431b26194d1022ad8a10191724aa6a79a20afbdd30ed33fce659cef0f0392bb3"},
+    {file = "deptry-0.11.0-py3-none-any.whl", hash = "sha256:e6d713806c0aff3ed3ac4f425b5b05b4473759a25a5ecfe5f93ddf224bfef57e"},
+    {file = "deptry-0.11.0.tar.gz", hash = "sha256:fcd778cd5539458dbc665489404932135651dc1a2c9c7bc45b92455e57268802"},
 ]
 
 [package.dependencies]
@@ -1425,4 +1425,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "3da4fe0c64b8e9ccc3b698c446daaeda0a710f6f1fb86bced198bb096c48e9a6"
+content-hash = "e09503ab2eb35d3321488444a861b4b4d43ee4861d99f8515baa259cc6361185"
