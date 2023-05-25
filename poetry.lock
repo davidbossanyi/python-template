@@ -811,14 +811,14 @@ requirements-deprecated-finder = ["pip-api", "pipreqs"]
 
 [[package]]
 name = "kombu"
-version = "5.3.0b3"
+version = "5.3.0rc1"
 description = "Messaging library for Python."
 category = "main"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "kombu-5.3.0b3-py3-none-any.whl", hash = "sha256:4ad23178dcd11192672d1fad598ace737d1044dbf31edf335a800ed26a9fb2fb"},
-    {file = "kombu-5.3.0b3.tar.gz", hash = "sha256:316df5e840f284d0671b9000bbf747da2b00f3b81433c720de66a5f659e5711d"},
+    {file = "kombu-5.3.0rc1-py3-none-any.whl", hash = "sha256:1d565fd1aad51f7bca86ba35dee7857303007de64a4500b8a86d83634380c487"},
+    {file = "kombu-5.3.0rc1.tar.gz", hash = "sha256:fd0f2665552109ed980249e97ab91b730690b073bc417481af0a8228d81620c7"},
 ]
 
 [package.dependencies]
@@ -826,19 +826,19 @@ amqp = ">=5.1.1,<6.0.0"
 vine = "*"
 
 [package.extras]
-azureservicebus = ["azure-servicebus (>=7.8.3)"]
+azureservicebus = ["azure-servicebus (>=7.10.0)"]
 azurestoragequeues = ["azure-identity (>=1.12.0)", "azure-storage-queue (>=12.6.0)"]
-confluentkafka = ["confluent-kafka (>=1.9.0,<1.10.0)"]
+confluentkafka = ["confluent-kafka (==2.1.1)"]
 consul = ["python-consul2"]
 librabbitmq = ["librabbitmq (>=2.0.0)"]
 mongodb = ["pymongo (>=4.1.1)"]
 msgpack = ["msgpack"]
-pyro = ["pyro5"]
+pyro = ["pyro4"]
 qpid = ["qpid-python (>=0.26)", "qpid-tools (>=0.26)"]
-redis = ["redis (>=4.2.2,<4.4.0)"]
+redis = ["redis (>=4.3.6,<4.4.0)"]
 slmq = ["softlayer-messaging (>=1.0.3)"]
-sqlalchemy = ["sqlalchemy (>=1.4.47,<2.1)"]
-sqs = ["boto3 (>=1.22.2)", "pycurl (>=7.44.1,<7.45.0)", "urllib3 (>=1.26.9)"]
+sqlalchemy = ["sqlalchemy (>=1.4.48,<2.1)"]
+sqs = ["boto3 (>=1.26.139)", "pycurl (==7.43.0.5)", "urllib3 (>=2.0.2)"]
 yaml = ["PyYAML (>=3.10)"]
 zookeeper = ["kazoo (>=2.8.0)"]
 
@@ -1425,4 +1425,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "0b1d797a803f1cad6dc8bfc8e791272c5878d064a235960aaa639d82da016875"
+content-hash = "c1a70e598e7c12eb29919e6e93b36ab57c5dff04c6357f05095b8164f0a50f9c"
