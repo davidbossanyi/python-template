@@ -160,14 +160,14 @@ uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
 name = "celery"
-version = "5.3.0b2"
+version = "5.3.0rc2"
 description = "Distributed Task Queue."
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "celery-5.3.0b2-py3-none-any.whl", hash = "sha256:b034f1e6475a90cf3e8c47357f132d0ed23fede22206ef5fc78b91f40f43ad67"},
-    {file = "celery-5.3.0b2.tar.gz", hash = "sha256:9ca1c46c40a5fd0946783d3a5a1ee532e283a586b1eeebd88a40a17af757a875"},
+    {file = "celery-5.3.0rc2-py3-none-any.whl", hash = "sha256:abd32f66ccb297a82339c0a4e761247387b4150b2f4c1db26408b84fd5ca7647"},
+    {file = "celery-5.3.0rc2.tar.gz", hash = "sha256:37a7fa2cbb5af4e0b25d338639e49b7b5d5731309d2874f424550602a40dc233"},
 ]
 
 [package.dependencies]
@@ -176,21 +176,22 @@ click = ">=8.1.2,<9.0"
 click-didyoumean = ">=0.3.0"
 click-plugins = ">=1.1.1"
 click-repl = ">=0.2.0"
-kombu = ">=5.3.0b2,<6.0"
-pytz = ">=2021.3"
+kombu = ">=5.3.0rc2,<6.0"
+python-dateutil = ">=2.8.2"
+tzdata = ">=2022.7"
 vine = ">=5.0.0,<6.0"
 
 [package.extras]
 arangodb = ["pyArango (>=2.0.1)"]
-auth = ["cryptography (==39.0.0)"]
-azureblockblob = ["azure-storage-blob (>=12.11.0)"]
+auth = ["cryptography (==40.0.2)"]
+azureblockblob = ["azure-storage-blob (>=12.15.0)"]
 brotli = ["brotli (>=1.0.0)", "brotlipy (>=0.7.0)"]
 cassandra = ["cassandra-driver (>=3.25.0,<4)"]
 consul = ["python-consul2 (==0.1.5)"]
 cosmosdbsql = ["pydocumentdb (==2.3.5)"]
 couchbase = ["couchbase (>=3.0.0)"]
 couchdb = ["pycouchdb (==1.14.2)"]
-django = ["Django (>=1.11)"]
+django = ["Django (>=2.2.28)"]
 dynamodb = ["boto3 (>=1.22.2)"]
 elasticsearch = ["elasticsearch (<8.0)"]
 eventlet = ["eventlet (>=0.32.0)"]
@@ -198,20 +199,20 @@ gevent = ["gevent (>=1.5.0)"]
 librabbitmq = ["librabbitmq (>=1.5.0)"]
 memcache = ["pylibmc (==1.6.3)"]
 mongodb = ["pymongo[srv] (>=4.0.2)"]
-msgpack = ["msgpack (==1.0.4)"]
+msgpack = ["msgpack (==1.0.5)"]
 pymemcache = ["python-memcached (==1.59)"]
-pyro = ["pyro4 (==4.82)"]
+pyro = ["pyro4"]
 pytest = ["pytest-celery (==0.0.0)"]
-redis = ["redis (>=4.2.2,<4.4.0)"]
-s3 = ["boto3 (>=1.9.125)"]
+redis = ["redis (>=4.5.2)"]
+s3 = ["boto3 (>=1.26.139)"]
 slmq = ["softlayer-messaging (>=1.0.3)"]
-solar = ["ephem (>=4.1.3,<4.2.0)"]
-sqlalchemy = ["sqlalchemy (==1.4.45)"]
-sqs = ["kombu[sqs] (>=5.2.4,<5.3.0)"]
+solar = ["ephem (==4.1.4)"]
+sqlalchemy = ["sqlalchemy (>=1.4.48,<2.1)"]
+sqs = ["kombu[sqs] (>=5.3.0rc2)"]
 tblib = ["tblib (>=1.3.0)", "tblib (>=1.5.0)"]
 yaml = ["PyYAML (>=3.10)"]
 zookeeper = ["kazoo (>=1.3.1)"]
-zstd = ["zstandard (==0.19.0)"]
+zstd = ["zstandard (==0.21.0)"]
 
 [[package]]
 name = "certifi"
@@ -1154,6 +1155,21 @@ pytest = ">=5.0"
 dev = ["pre-commit", "pytest-asyncio", "tox"]
 
 [[package]]
+name = "python-dateutil"
+version = "2.8.2"
+description = "Extensions to the standard Python datetime module"
+category = "main"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+files = [
+    {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
+    {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
+]
+
+[package.dependencies]
+six = ">=1.5"
+
+[[package]]
 name = "python-dotenv"
 version = "1.0.0"
 description = "Read key-value pairs from a .env file and set them as environment variables"
@@ -1167,18 +1183,6 @@ files = [
 
 [package.extras]
 cli = ["click (>=5.0)"]
-
-[[package]]
-name = "pytz"
-version = "2022.7.1"
-description = "World timezone definitions, modern and historical"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "pytz-2022.7.1-py2.py3-none-any.whl", hash = "sha256:78f4f37d8198e0627c5f1143240bb0206b8691d8d7ac6d78fee88b78733f8c4a"},
-    {file = "pytz-2022.7.1.tar.gz", hash = "sha256:01a0681c4b9684a28304615eba55d1ab31ae00bf68ec157ec3708a8182dbbcd0"},
-]
 
 [[package]]
 name = "pyyaml"
@@ -1351,6 +1355,18 @@ files = [
 ]
 
 [[package]]
+name = "tzdata"
+version = "2023.3"
+description = "Provider of IANA time zone data"
+category = "main"
+optional = false
+python-versions = ">=2"
+files = [
+    {file = "tzdata-2023.3-py2.py3-none-any.whl", hash = "sha256:7e65763eef3120314099b6939b5546db7adce1e7d6f2e179e3df563c70511eda"},
+    {file = "tzdata-2023.3.tar.gz", hash = "sha256:11ef1e08e54acb0d4f95bdb1be05da659673de4acbd21bf9c69e94cc5e907a3a"},
+]
+
+[[package]]
 name = "urllib3"
 version = "1.26.14"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -1434,4 +1450,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "3f541ae7f711868925e2b51df7594b682f39ed3ad064ed91ac0569d06004372f"
+content-hash = "c9030633b260dd4684ac7faf956deb8a7aa4db683675b9975d6f7650f48e9650"
