@@ -160,14 +160,14 @@ uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
 name = "celery"
-version = "5.3.0rc2"
+version = "5.3.0"
 description = "Distributed Task Queue."
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "celery-5.3.0rc2-py3-none-any.whl", hash = "sha256:abd32f66ccb297a82339c0a4e761247387b4150b2f4c1db26408b84fd5ca7647"},
-    {file = "celery-5.3.0rc2.tar.gz", hash = "sha256:37a7fa2cbb5af4e0b25d338639e49b7b5d5731309d2874f424550602a40dc233"},
+    {file = "celery-5.3.0-py3-none-any.whl", hash = "sha256:95d29f9a93f41c4b122fddf1fe3ef13f872029dca4ad1f9af4f1a414442ceecf"},
+    {file = "celery-5.3.0.tar.gz", hash = "sha256:1eaba5ee14d8c8c0bed8f6063e5e10dabdbcf23503a861cf0e10b7221d99cb0d"},
 ]
 
 [package.dependencies]
@@ -176,14 +176,14 @@ click = ">=8.1.2,<9.0"
 click-didyoumean = ">=0.3.0"
 click-plugins = ">=1.1.1"
 click-repl = ">=0.2.0"
-kombu = ">=5.3.0rc2,<6.0"
+kombu = ">=5.3.0,<6.0"
 python-dateutil = ">=2.8.2"
 tzdata = ">=2022.7"
 vine = ">=5.0.0,<6.0"
 
 [package.extras]
 arangodb = ["pyArango (>=2.0.1)"]
-auth = ["cryptography (==40.0.2)"]
+auth = ["cryptography (==41.0.1)"]
 azureblockblob = ["azure-storage-blob (>=12.15.0)"]
 brotli = ["brotli (>=1.0.0)", "brotlipy (>=0.7.0)"]
 cassandra = ["cassandra-driver (>=3.25.0,<4)"]
@@ -192,23 +192,23 @@ cosmosdbsql = ["pydocumentdb (==2.3.5)"]
 couchbase = ["couchbase (>=3.0.0)"]
 couchdb = ["pycouchdb (==1.14.2)"]
 django = ["Django (>=2.2.28)"]
-dynamodb = ["boto3 (>=1.22.2)"]
+dynamodb = ["boto3 (>=1.26.143)"]
 elasticsearch = ["elasticsearch (<8.0)"]
 eventlet = ["eventlet (>=0.32.0)"]
 gevent = ["gevent (>=1.5.0)"]
-librabbitmq = ["librabbitmq (>=1.5.0)"]
+librabbitmq = ["librabbitmq (>=2.0.0)"]
 memcache = ["pylibmc (==1.6.3)"]
 mongodb = ["pymongo[srv] (>=4.0.2)"]
 msgpack = ["msgpack (==1.0.5)"]
 pymemcache = ["python-memcached (==1.59)"]
-pyro = ["pyro4"]
+pyro = ["pyro4 (==4.82)"]
 pytest = ["pytest-celery (==0.0.0)"]
 redis = ["redis (>=4.5.2)"]
-s3 = ["boto3 (>=1.26.139)"]
+s3 = ["boto3 (>=1.26.143)"]
 slmq = ["softlayer-messaging (>=1.0.3)"]
 solar = ["ephem (==4.1.4)"]
 sqlalchemy = ["sqlalchemy (>=1.4.48,<2.1)"]
-sqs = ["kombu[sqs] (>=5.3.0rc2)"]
+sqs = ["kombu[sqs] (>=5.3.0)"]
 tblib = ["tblib (>=1.3.0)", "tblib (>=1.5.0)"]
 yaml = ["PyYAML (>=3.10)"]
 zookeeper = ["kazoo (>=1.3.1)"]
@@ -1450,4 +1450,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "98365d9dac231393cbd7a0a780b887e54608eb474b66533565bfab97bf776716"
+content-hash = "54f6c0bfa1632cab8dddd0f20797e007be2ac72f746c28fe82c7334b91d69d95"
