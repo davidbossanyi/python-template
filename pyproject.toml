@@ -8,7 +8,7 @@ authors = ["David Bossanyi"]
 python = "^3.11"
 fastapi = "^0.97.0"
 celery = { version = "5.3.0", allow-prereleases = true}
-kombu = { version = "5.3.0", allow-prereleases = true}
+kombu = { version = "5.3.1", allow-prereleases = true}
 pydantic = {extras = ["dotenv"], version = "^1.10.9"}
 azure-storage-blob = "12.16.0"
 azure-storage-queue = "12.6.0"
