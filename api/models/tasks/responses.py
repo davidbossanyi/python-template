@@ -1,4 +1,4 @@
-from pydantic import UUID4, BaseModel, validator
+from pydantic import UUID4, BaseModel
 
 
 class TaskStatusResponse(BaseModel):
@@ -16,9 +16,7 @@ class CeleryTaskStatistics(BaseModel):
     pending: int
     succeeded: int
     failed: int
-    success_rate: float | None
 
-    @validator("success_rate", always=True)
-    def calculate_success_rate(cls, value: float, values: dict[str, int | float]) -> float:
-        total = values["total"]
-        return float(values["succeeded"] / total if total > 0 else 1)
+    @property
+    def success_rate(self) -> float:
+        return (self.succeeded / self.total) if self.total > 0 else 1

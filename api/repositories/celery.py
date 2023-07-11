@@ -67,7 +67,9 @@ class AzureBlobCeleryRepository(ICeleryRepository):
 
     def save(self, tasks: list[CeleryTaskMetaData]) -> None:
         for task in tasks:
-            self._container_client.upload_blob(name=f"{self._prefix}{task.id}", data=task.json(), overwrite=True)
+            self._container_client.upload_blob(
+                name=f"{self._prefix}{task.id}", data=task.model_dump_json(), overwrite=True
+            )
 
     def get_failures(
         self, date_from: dt.datetime | None = None, date_to: dt.datetime | None = None
@@ -100,4 +102,4 @@ class AzureBlobCeleryRepository(ICeleryRepository):
 
     def _get_blob_contents(self, blob: str) -> CeleryTaskMetaData:
         blob_content = json.loads(self._container_client.download_blob(blob=blob).readall().decode())
-        return CeleryTaskMetaData.parse_obj(blob_content)
+        return CeleryTaskMetaData.model_validate(blob_content)

@@ -47,20 +47,20 @@ class TestCeleryRepositoryContract:
 
     def test_get_statistics_with_no_start_or_end_date(self, repository: ICeleryRepository) -> None:
         actual = repository.get_statistics()
-        expected = CeleryTaskStatistics(total=2, pending=0, succeeded=1, failed=1, success_rate=0.5)
+        expected = CeleryTaskStatistics(total=2, pending=0, succeeded=1, failed=1)
         assert actual == expected
 
     def test_get_statistics_with_start_date(self, repository: ICeleryRepository) -> None:
         actual = repository.get_statistics(date_from=dt.datetime.now(self._tz))
-        expected = CeleryTaskStatistics(total=0, pending=0, succeeded=0, failed=0, success_rate=1)
+        expected = CeleryTaskStatistics(total=0, pending=0, succeeded=0, failed=0)
         assert actual == expected
 
     def test_get_statistics_with_end_date(self, repository: ICeleryRepository) -> None:
         actual = repository.get_statistics(date_to=dt.datetime.now(self._tz))
-        expected = CeleryTaskStatistics(total=2, pending=0, succeeded=1, failed=1, success_rate=0.5)
+        expected = CeleryTaskStatistics(total=2, pending=0, succeeded=1, failed=1)
         assert actual == expected
 
     def test_get_statistics_with_start_and_end_date(self, repository: ICeleryRepository) -> None:
         actual = repository.get_statistics(date_from=dt.datetime.now(self._tz), date_to=dt.datetime.now(self._tz))
-        expected = CeleryTaskStatistics(total=0, pending=0, succeeded=0, failed=0, success_rate=1)
+        expected = CeleryTaskStatistics(total=0, pending=0, succeeded=0, failed=0)
         assert actual == expected

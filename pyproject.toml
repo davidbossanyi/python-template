@@ -7,12 +7,13 @@ authors = ["David Bossanyi"]
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = "^0.100.0"
-celery = { version = "5.3.1", allow-prereleases = true}
-kombu = { version = "5.3.1", allow-prereleases = true}
-pydantic = {extras = ["dotenv"], version = "^1.10.11"}
+celery = "^5.3.1"
+kombu = "^5.3.1"
+pydantic = "^2.0.2"
 azure-storage-blob = "12.16.0"
 azure-storage-queue = "12.6.0"
 uvicorn = "^0.22.0"
+pydantic-settings = "^2.0.1"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.0"
@@ -77,7 +78,7 @@ line-length = 120
 [tool.coverage.run]
 omit = ["tests/*"]
 
-[tool.deptry]
+[tool.deptry.per_rule_ignores]
 DEP002 = ["kombu", "uvicorn"]
 
 [tool.mypy]
