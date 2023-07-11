@@ -1,7 +1,7 @@
 import datetime as dt
 import json
 import time
-from typing import Protocol
+from typing import ClassVar, Protocol
 
 from azure.storage.blob import ContainerClient
 
@@ -25,7 +25,7 @@ class ICeleryRepository(Protocol):
 
 
 class InMemoryCeleryRepository(ICeleryRepository):
-    _store: dict[dt.datetime, CeleryTaskMetaData] = {}
+    _store: ClassVar[dict[dt.datetime, CeleryTaskMetaData]] = {}
     _tz = dt.timezone.utc
 
     def save(self, tasks: list[CeleryTaskMetaData]) -> None:

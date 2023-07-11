@@ -25,10 +25,9 @@ coverage = "^7.2.7"
 [tool.poetry.group.lint.dependencies]
 pre-commit = "^3.3.3"
 black = "^23.7.0"
-isort = "^5.12.0"
 mypy = "^1.4.1"
 deptry = "^0.12.0"
-ruff = "^0.0.272"
+ruff = "^0.0.277"
 
 [build-system]
 requires = ["poetry-core>=1.2.0"]
@@ -55,6 +54,7 @@ extend-select = [
     "C90",
     "E",
     "F",
+    "I001",
     "RUF",
     "S",
     "T20",
@@ -74,15 +74,11 @@ max-complexity = 20
 [tool.black]
 line-length = 120
 
-[tool.isort]
-profile = "black"
-line_length = 120
-
 [tool.coverage.run]
 omit = ["tests/*"]
 
 [tool.deptry]
-ignore_obsolete = ["kombu", "uvicorn"]
+DEP002 = ["kombu", "uvicorn"]
 
 [tool.mypy]
 python_version = "3.11"

@@ -1,7 +1,7 @@
-import tomllib
 from functools import lru_cache
 from pathlib import Path
 
+import tomllib
 from azure.core.exceptions import ResourceExistsError
 from azure.storage.blob import BlobServiceClient
 
