@@ -2,6 +2,7 @@
 An example [FastAPI](https://fastapi.tiangolo.com/) app using [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html) and [Azure storage](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview) for task queuing.
 
 [![CI](https://github.com/davidbossanyi/python-template/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/davidbossanyi/python-template/actions/workflows/ci.yaml)
+[![Coverage](https://github.com/davidbossanyi/fastapi-celery-example/wiki/coverage.svg)](https://github.com/davidbossanyi/fastapi-celery-example/actions)
 
 ### Requirements
  - [make](https://www.gnu.org/software/make/) (e.g. from [chocolatey](https://community.chocolatey.org/packages/make) on Windows)
