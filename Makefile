@@ -21,7 +21,7 @@ test: test-unit pre-integration test-integration post-integration
 .PHONY: test-unit
 ## Run unit tests
 test-unit:
-	poetry run pytest tests/ -m "not integration"
+	poetry run coverage run -m pytest -m "not integration"
 
 .PHONY: pre-integration
 ## Spin up docker containers for integration tests
@@ -35,7 +35,7 @@ post-integration: stop
 .PHONY: test-integration
 ## Run integration tests
 test-integration:
-	poetry run pytest tests -m "integration"
+	poetry run coverage run -a -m pytest -m "integration"
 
 .PHONY: start
 ## Spin up all containers locally, including api and worker
