@@ -77,8 +77,7 @@ class AzureBlobCeleryRepository(ICeleryRepository):
         blobs = [
             blob.name
             for blob in self._container_client.list_blobs(name_starts_with=self._prefix)
-            if (not date_from or blob.creation_time >= date_from)
-            and (not date_to or blob.creation_time <= date_to)
+            if (not date_from or blob.creation_time >= date_from) and (not date_to or blob.creation_time <= date_to)
         ]
         tasks = [self._get_blob_contents(blob) for blob in blobs]
         task_ids = [task.id for task in tasks if task.status == "FAILURE"]
@@ -90,8 +89,7 @@ class AzureBlobCeleryRepository(ICeleryRepository):
         blobs = [
             blob.name
             for blob in self._container_client.list_blobs(name_starts_with=self._prefix)
-            if (not date_from or blob.creation_time >= date_from)
-            and (not date_to or blob.creation_time <= date_to)
+            if (not date_from or blob.creation_time >= date_from) and (not date_to or blob.creation_time <= date_to)
         ]
         tasks = [self._get_blob_contents(blob) for blob in blobs]
         total = len(tasks)
