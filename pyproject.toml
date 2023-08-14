@@ -20,7 +20,7 @@ pytest = "^7.4.0"
 httpx = "^0.24.1"
 pytest-mock = "^3.11.1"
 pytest-celery = "^0.0.0"
-coverage = "^7.2.7"
+coverage = "^7.3.0"
 
 [tool.poetry.group.lint.dependencies]
 pre-commit = "^3.3.3"
