@@ -7,7 +7,7 @@ authors = ["David Bossanyi"]
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = "^0.103.0"
-celery = "^5.3.1"
+celery = "^5.3.3"
 kombu = "^5.3.2"
 pydantic = "^2.3.0"
 azure-storage-blob = "12.17.0"
