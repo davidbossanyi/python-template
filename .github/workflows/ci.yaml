@@ -18,7 +18,7 @@ jobs:
       coverage: ${{ steps.coverage.outputs.COVERAGE }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Python 3.11
         uses: actions/setup-python@v4
@@ -77,7 +77,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -124,7 +124,7 @@ jobs:
         COVERAGE: ${{ needs.test.outputs.coverage }}
 
       steps:
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@v4
           name: Checkout Wiki
           with:
             repository: ${{ github.repository }}.wiki
