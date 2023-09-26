@@ -86,13 +86,13 @@ aio = ["azure-core[aio] (>=1.28.0,<2.0.0)"]
 
 [[package]]
 name = "azure-storage-queue"
-version = "12.7.1"
+version = "12.7.2"
 description = "Microsoft Azure Azure Queue Storage Client Library for Python"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "azure-storage-queue-12.7.1.tar.gz", hash = "sha256:cc1b79cf5dd9471075c4c2c0df11167fb992a22978dc92e5f2ae3ac349ff6af6"},
-    {file = "azure_storage_queue-12.7.1-py3-none-any.whl", hash = "sha256:dffedf3e87c256373c348c1c6ebd35f410c3405d4a01e7d2ebccca051e88f736"},
+    {file = "azure-storage-queue-12.7.2.tar.gz", hash = "sha256:f74b278bfc8a1a8951ffdd92b640b829a77b7cd17fa9e235733cd5a8c5b7e496"},
+    {file = "azure_storage_queue-12.7.2-py3-none-any.whl", hash = "sha256:de1cf181039fbea1e75e6be6a087ad4e0fabce0d4d520108846351c09f539a23"},
 ]
 
 [package.dependencies]
@@ -1449,4 +1449,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "1b0bc1bbab56be966a99fd2f7f10970689a0b08bb736a0715b150de2dafa2589"
+content-hash = "e63cecc9758e3bd4c36d62011e9aa4df9e73e81625ceb8876e7b87470d9506e1"
