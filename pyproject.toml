@@ -11,7 +11,7 @@ celery = "^5.3.4"
 kombu = "^5.3.3"
 pydantic = "^2.4.2"
 azure-storage-blob = "12.19.0"
-azure-storage-queue = "12.7.3"
+azure-storage-queue = "12.8.0"
 uvicorn = "^0.24.0"
 pydantic-settings = "^2.0.3"
 
