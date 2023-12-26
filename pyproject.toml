@@ -6,7 +6,7 @@ authors = ["David Bossanyi"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = "^0.105.0"
+fastapi = "^0.106.0"
 celery = "^5.3.6"
 kombu = "^5.3.4"
 pydantic = "^2.5.3"
