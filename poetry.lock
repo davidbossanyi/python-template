@@ -760,13 +760,13 @@ six = "*"
 
 [[package]]
 name = "kombu"
-version = "5.3.4"
+version = "5.3.5"
 description = "Messaging library for Python."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "kombu-5.3.4-py3-none-any.whl", hash = "sha256:63bb093fc9bb80cfb3a0972336a5cec1fa7ac5f9ef7e8237c6bf8dda9469313e"},
-    {file = "kombu-5.3.4.tar.gz", hash = "sha256:0bb2e278644d11dea6272c17974a3dbb9688a949f3bb60aeb5b791329c44fadc"},
+    {file = "kombu-5.3.5-py3-none-any.whl", hash = "sha256:0eac1bbb464afe6fb0924b21bf79460416d25d8abc52546d4f16cad94f789488"},
+    {file = "kombu-5.3.5.tar.gz", hash = "sha256:30e470f1a6b49c70dc6f6d13c3e4cc4e178aa6c469ceb6bcd55645385fc84b93"},
 ]
 
 [package.dependencies]
@@ -1449,4 +1449,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "e552c49882986a6f378954b5e121573398bc01817f062d13a8d8b76bed632ac8"
+content-hash = "f3a4b3934519ec80c99d2da5b15f3c85285a49f0e8d4a2fd7b67444408da2e63"
