@@ -25,13 +25,13 @@ jobs:
         with:
           python-version: "3.11"
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         name: Cache Dependencies
         with:
           path: ~/.cache/pypoetry/virtualenvs
           key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         name: Cache Pre-Commit
         with:
           path: ~/.cache/pre-commit
