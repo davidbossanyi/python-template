@@ -12,7 +12,7 @@ kombu = "^5.3.5"
 pydantic = "^2.5.3"
 azure-storage-blob = "12.19.0"
 azure-storage-queue = "12.9.0"
-uvicorn = "^0.26.0"
+uvicorn = "^0.27.0"
 pydantic-settings = "^2.1.0"
 
 [tool.poetry.group.test.dependencies]
