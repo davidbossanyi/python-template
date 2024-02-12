@@ -23,7 +23,7 @@ pytest-celery = "^0.0.0"
 coverage = "^7.4.1"
 
 [tool.poetry.group.lint.dependencies]
-pre-commit = "^3.6.0"
+pre-commit = "^3.6.1"
 black = "^23.12.1"
 mypy = "^1.8.0"
 deptry = "^0.12.0"
