@@ -13,7 +13,7 @@ pydantic = "^2.8.2"
 azure-storage-blob = "12.21.0"
 azure-storage-queue = "12.11.0"
 uvicorn = "^0.30.3"
-pydantic-settings = "^2.3.4"
+pydantic-settings = "^2.4.0"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.4"
