@@ -24,7 +24,7 @@ coverage = "^7.6.0"
 
 [tool.poetry.group.lint.dependencies]
 pre-commit = "^3.8.0"
-black = "^23.12.1"
+black = "^24.8.0"
 mypy = "^1.11.1"
 deptry = "^0.18.0"
 ruff = "^0.4.10"
