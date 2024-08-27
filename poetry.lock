@@ -582,22 +582,23 @@ test-randomorder = ["pytest-randomly"]
 
 [[package]]
 name = "deptry"
-version = "0.18.0"
+version = "0.20.0"
 description = "A command line utility to check for unused, missing and transitive dependencies in a Python project."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "deptry-0.18.0-cp38-abi3-macosx_10_12_x86_64.whl", hash = "sha256:aac16b9825c67887f84795d3fe3c5a676376cd6cc8555f6f7b57bfd45603e421"},
-    {file = "deptry-0.18.0-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:b1440d2fab960e224b542726e6fcb0d3065635cfa8233c14f6c578faa2766e02"},
-    {file = "deptry-0.18.0-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:d5764d6b484d488ce0f7085dc1767d99069b476383857aafd3bbc912128892dd"},
-    {file = "deptry-0.18.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ee0a916d78ba8db092a9454d5bc20fccbadb6ed0e8fb81fc020ba7e0df3578ed"},
-    {file = "deptry-0.18.0-cp38-abi3-win_amd64.whl", hash = "sha256:7d1b561a4477ab130e1cb277b3d3aa25743b3005e1bb60076031ec3926b47541"},
-    {file = "deptry-0.18.0-pp310-pypy310_pp73-macosx_10_12_x86_64.whl", hash = "sha256:e73d5c2676a1f49a954baa59c248b56bc940ab87d6070cb164f1394c24e07cf3"},
-    {file = "deptry-0.18.0-pp310-pypy310_pp73-macosx_11_0_arm64.whl", hash = "sha256:7343bb4948ad625ac1b3109279665004e6790ce01c8dc6a8a2ef1e4424c29773"},
-    {file = "deptry-0.18.0-pp310-pypy310_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:cdf6da66e31ef8bdace3bb34a86c4f066b5c5296776dd61b76802c72b0b3f5f4"},
-    {file = "deptry-0.18.0-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c7590966832f5222d2277612e07e67285d92123ad96cf7713cda579d420d63d1"},
-    {file = "deptry-0.18.0-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:57e09ca29e98c4782197dc959849498941b5c4fc53178e9fe1fa30025e608bfd"},
-    {file = "deptry-0.18.0.tar.gz", hash = "sha256:9cf8e398ea394f90ccfa8e11d7dcfba8ed485f6a33270ee2b024475b72a00d11"},
+    {file = "deptry-0.20.0-cp38-abi3-macosx_10_12_x86_64.whl", hash = "sha256:41434d95124851b83cb05524d1a09ad6fea62006beafed2ef90a6b501c1b237f"},
+    {file = "deptry-0.20.0-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:b3b4b22d1406147de5d606a24042126cd74d52fdfdb0232b9c5fd0270d601610"},
+    {file = "deptry-0.20.0-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:012fb106dbea6ca95196cdcd75ac90c516c8f01292f7934f2e802a7cf025a660"},
+    {file = "deptry-0.20.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8ce3920e2bd6d2b4427ab31ab8efb94bbef897001c2d395782bc30002966d12d"},
+    {file = "deptry-0.20.0-cp38-abi3-win_amd64.whl", hash = "sha256:0c90ce64e637d0e902bc97c5a020adecfee9e9f09ee0bf4c61554994139bebdb"},
+    {file = "deptry-0.20.0-cp38-abi3-win_arm64.whl", hash = "sha256:6886ff44aaf26fd83093f14f844ebc84589d90df9bbad9a1625e8a080e6f1be2"},
+    {file = "deptry-0.20.0-pp310-pypy310_pp73-macosx_10_12_x86_64.whl", hash = "sha256:ace3b39b1d0763f357c79bab003d1b135bea2eb61102be539992621a42d1ac7b"},
+    {file = "deptry-0.20.0-pp310-pypy310_pp73-macosx_11_0_arm64.whl", hash = "sha256:d1a00f8c9e6c0829a4a523edd5e526e3df06d2b50e0a99446f09f9723df2efad"},
+    {file = "deptry-0.20.0-pp310-pypy310_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e233859f150df70ffff76e95f9b7326fc25494b9beb26e776edae20f0f515e7d"},
+    {file = "deptry-0.20.0-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9f92e7e97ef42477717747b190bc6796ab94b35655af126d8c577f7eae0eb3a9"},
+    {file = "deptry-0.20.0-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:f6cee6005997791bb77155667be055333fb63ae9a24f0f103f25faf1e7affe34"},
+    {file = "deptry-0.20.0.tar.gz", hash = "sha256:62e9aaf3aea9e2ca66c85da98a0ba0290b4d3daea4e1d0ad937d447bd3c36402"},
 ]
 
 [package.dependencies]
@@ -1440,4 +1441,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "dcdba9a3719a738f43ae1b48d4bb1211d7169083c65b3b845b140828f4e5013d"
+content-hash = "403761586cbafd94224b2524fcf520cd183636f7bbc0b0dadbb07565786606f9"
